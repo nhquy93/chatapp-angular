@@ -1,0 +1,12 @@
+@use 'src/assets/scss/' as *;
+
+.wrapper-profile {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(82, 38, 83);
+    @include flex(center, space-between);
+
+    .username {
+        color: $white;
+        margin-left: 5px;
+    }
+}

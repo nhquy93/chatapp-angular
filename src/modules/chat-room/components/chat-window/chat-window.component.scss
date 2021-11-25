@@ -1,0 +1,57 @@
+@use 'src/assets/scss/' as *;
+
+.chat-window {
+    &__wrapper {
+        height: 100vh;
+
+        .avatar__group {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__header {
+        @include flex(center, space-between);
+        height: 56px;
+        padding: 0 16px;
+        border-bottom: 1px solid rgba(230, 230, 230);
+        &__info {
+            @include flex(center, center);
+            flex-direction: column;
+        }
+
+        &__title {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        &__desc {
+            font-size: 12px;
+        }
+    }
+
+    &__content {
+        height: calc(100% - 56px);
+        display: flex;
+        flex-direction: column;
+        padding: 11px;
+        justify-content: flex-end;
+
+        &__messages {
+            max-height: 100%;
+            overflow-y: auto;
+        }
+
+        &__form {
+            @include flex(center, space-between);
+            padding: 2px 2px 2px 0;
+            border: 1px solid rgba(230, 230, 230);
+            border-radius: 2px;
+
+            .ant-row {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

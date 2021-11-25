@@ -1,0 +1,21 @@
+.auth {
+  &__title {
+    text-align: center;
+  }
+
+  &__gg {
+    width: 100%;
+    margin-bottom: .5rem;
+  }
+
+  &__fb {
+    width: 100%;
+  }
+}
+
+.spin {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

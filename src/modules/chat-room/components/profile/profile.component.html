@@ -1,0 +1,7 @@
+<div class="wrapper-profile">
+    <div>
+        <nz-avatar nzSize="large" [nzSrc]="user?.photoURL" [nzText]="user.photoURL ? '' : user?.displayName?.charAt(0)?.toUpperCase()"></nz-avatar>
+        <span class="username" nz-typography nzType="secondary">{{user?.displayName}}</span>
+    </div>
+    <button nz-button nzGhost (click)="onLogout()">Đăng xuất</button>
+</div>

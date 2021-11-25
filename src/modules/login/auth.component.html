@@ -1,0 +1,16 @@
+<div class="auth" *ngIf="!isLoading">
+    <nz-row nzJustify="center" style="height: 800px;">
+        <nz-col nzSpan="8">
+            <h3 nz-typography class="auth__title">Fun Chat</h3>
+            <button nz-button class="auth__gg" (click)="GoogleProvider()">
+                Đăng nhập bằng Google
+            </button>
+            <button nz-button class="auth__fb">
+                Đăng nhập bằng Facebook
+            </button>
+        </nz-col>
+    </nz-row>
+</div>
+<div class="spin" *ngIf="isLoading">
+    <nz-spin nzSize="large" nzSpinning="true"></nz-spin>
+</div>

@@ -1,0 +1,20 @@
+<nz-modal nzTitle="Tạo phòng" nzVisible (nzOnOk)="handleOk()" (nzOnCancel)="handleCancel()" nzOkText="OK" nzCancelText="Cancel">
+    <div *nzModalContent>
+        <form nz-form [formGroup]="form">
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name" nzRequired>Tên phòng</nz-form-label>
+                <nz-form-control [nzSm]="18" [nzXs]="24" nzErrorTip="Tên phòng không được bỏ trống !">
+                    <input nz-input formControlName="name" placeholder="Nhập tên phòng" />
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="desc">Mô tả</nz-form-label>
+                <nz-form-control [nzSm]="18" [nzXs]="24">
+                    <nz-textarea-count [nzMaxCharacterCount]="200">
+                        <textarea rows="4" formControlName="desc" nz-input></textarea>
+                    </nz-textarea-count>
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+    </div>
+</nz-modal>

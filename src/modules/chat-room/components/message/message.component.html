@@ -1,0 +1,10 @@
+<div class="wrapper">
+    <div>
+        <nz-avatar nzSize="large" [nzSrc]="photoURL" [nzText]="photoURL ? '' : displayName?.charAt(0)?.toUpperCase()"></nz-avatar>
+        <nz-typography class="author">{{displayName}}</nz-typography>
+        <nz-typography class="date" nzType="secondary">{{createdAt}}</nz-typography>
+    </div>
+    <div>
+        <nz-typography class="content">{{text}}</nz-typography>
+    </div>
+</div>

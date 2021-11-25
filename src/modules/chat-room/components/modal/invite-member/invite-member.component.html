@@ -1,0 +1,13 @@
+<nz-modal nzTitle="Mời thành viên" nzVisible (nzOnOk)="handleOk()" (nzOnCancel)="handleCancel()" nzOkText="OK" nzCancelText="Cancel">
+    <div *nzModalContent>
+        <form nz-form [formGroup]="form">
+            <nz-form-item>
+                <nz-form-control nzSpan="24">
+                    <nz-select nzShowSearch nzAutoFocus [nzFilterOption]="nzFilterOption" (nzOnSearch)="onSearch($event)" formControlName="tags" nzMode="multiple" nzNotFoundContent="No Data" nzPlaceHolder="Chọn thành viên">
+                        <nz-option *ngFor="let option of users" nzLabel="{{option?.label}}" nzValue="{{option?.value}}"></nz-option>
+                    </nz-select>
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+    </div>
+</nz-modal>

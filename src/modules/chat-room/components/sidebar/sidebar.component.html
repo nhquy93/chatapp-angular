@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <nz-row>
+        <nz-col nzSpan="24">
+            <profile [user]="user" (_logout$)="handleLogout($event)"></profile>
+        </nz-col>
+        <nz-col nzSpan="24">
+            <room-list [rooms]="rooms" (_submission$)="handleSubmit($event)"></room-list>
+        </nz-col>
+    </nz-row>
+</div>

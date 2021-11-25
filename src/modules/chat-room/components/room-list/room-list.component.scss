@@ -1,0 +1,25 @@
+@use 'src/assets/scss/'as *;
+
+::ng-deep .room-list {
+  .ant-collapse .ant-collapse-item {
+    .ant-collapse-header,
+    p {
+      color: $white;
+    }
+
+    .ant-collapse-content-box {
+      padding: 0 40px;
+
+      .link-style {
+        display: block;
+        margin-bottom: 5px;
+        color: $white;
+      }
+
+      .add-room {
+          color: $white;
+          padding: 0;
+      }
+    }
+  }
+}

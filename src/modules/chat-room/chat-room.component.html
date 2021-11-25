@@ -1,0 +1,10 @@
+<div class="chat-room">
+    <nz-row>
+        <nz-col nzSpan="6">
+            <sidebar (_selection$)="handleRoomId($event)"></sidebar>
+        </nz-col>
+        <nz-col nzSpan="18">
+            <chat-window [room]="selectedRoom" [members]="members" [users]="users" (_submission$)="handleTags($event)"></chat-window>
+        </nz-col>
+    </nz-row>
+</div>

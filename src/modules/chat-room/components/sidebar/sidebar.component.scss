@@ -1,0 +1,7 @@
+@use 'src/assets/scss/' as *;
+
+.sidebar {
+  background: $bg-sidebar;
+  color: $white;
+  height: $height;
+}

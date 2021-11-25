@@ -1,0 +1,29 @@
+<div class="chat-window__wrapper" *ngIf="room;else alertRoom">
+    <div class="chat-window__header">
+        <div class="chat-window__header__info">
+            <p class="chat-window__header__title">{{room?.name}}</p>
+            <span class="chat-window__header__desc">{{room?.desc}}</span>
+        </div>
+        <div class="avatar__group">
+            <button nz-button nzType="text" (click)="handleModal()"><i nz-icon nzType="user-add" nzTheme="outline"></i> Mời</button>
+            <nz-avatar-group nzSize="large">
+                <nz-avatar nzSize="large" [nzSrc]="m?.photoURL" [nzText]="m.photoURL ? '' : m?.displayName?.charAt(0)?.toUpperCase()" nz-tooltip nzTooltipTitle="{{m?.displayName}}" *ngFor="let m of members"></nz-avatar>
+            </nz-avatar-group>
+        </div>
+    </div>
+    <div class="chat-window__content">
+        <div class="chat-window__content__messages">
+            <message [text]="msg.text" [displayName]="msg.displayName" [photoURL]="msg.photoURL" [createdAt]="msg?.createdAt | date: 'dd/MM/yy HH:mm:ss'" *ngFor="let msg of messages"></message>
+        </div>
+        <div class="chat-window__content__form" nz-form>
+            <nz-form-item>
+                <input [(ngModel)]="message" (keydown.enter)="handleSend()" placeholder="Nhập tin nhắn" nzBorderless="false" autocomplete="off" nz-input />
+            </nz-form-item>
+            <button nz-button nzType="primary" (click)="handleSend()">Gửi</button>
+        </div>
+    </div>
+</div>
+<ng-template #alertRoom>
+    <nz-alert nzType="info" nzMessage="Hãy chọn phòng" nzShowIcon></nz-alert>
+</ng-template>
+<modal-invite-member [users]="users" (_cancellation$)="handleCancel()" (_submission$)="handleSubmit($event)" *ngIf="show"></modal-invite-member>

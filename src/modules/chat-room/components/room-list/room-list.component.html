@@ -1,0 +1,13 @@
+<div class="room-list">
+    <nz-collapse nzGhost>
+        <nz-collapse-panel nzActive="true" nzHeader="Danh sách các phòng">
+            <nz-typography class="link-style" *ngFor="let room of rooms">
+                <a (click)="selectedRoomId(room?.id)">
+                    <span>{{room?.name}}</span>
+                </a>
+            </nz-typography>
+            <button nz-button class="add-room" nzType="text" (click)="showModal()"><i nz-icon nzType="plus-circle" nzTheme="outline"></i> Thêm phòng</button>
+        </nz-collapse-panel>
+    </nz-collapse>
+</div>
+<modal-add-room (_cancellation$)="handleCancel()" (_submission$)="handleSubmit($event)" *ngIf="show"></modal-add-room>
